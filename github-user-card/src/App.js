@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
 import UserCard from'./components/UserCard';
+import axios from 'axios';
 import './App.css';
 
 class App extends Component {
@@ -11,24 +12,36 @@ class App extends Component {
       followers: []
     };
   };
-  
+
+  componentDidMount() {
+    fetch('https://api.github.com/users/anhogan')
+      .then(response => {
+        this.setState({user: response.data});
+        return fetch('https://api.github.com/users/anhogan/followers');
+      })
+      .then(followers => {
+        this.setState({followers: followers.data});
+        console.log(this.state.followers);
+      })
+      .catch(error => {
+        console.log(error.message)
+      });
+
+    axios.get('https://api.github.com/users/anhogan/followers')
+      .then(response => {
+        this.setState({followers: response.data});
+        console.log(this.state.followers);
+      })
+      .catch(error => {
+        console.log(error.message);
+      });
+  };
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Header />
+        <UserCard />
       </div>
     );
   }

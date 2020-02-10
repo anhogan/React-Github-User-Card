@@ -1,8 +1,11 @@
 import React from 'react';
+import UserFollowers from './UserFollowers';
 
-const UserCard = () => {
+const UserCard = (props) => {
   return (
-    <div></div>
+    <div>
+
+    </div>
   )
 };
 

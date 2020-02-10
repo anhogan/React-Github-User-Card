@@ -1,8 +1,10 @@
 import React from 'react';
 
-const UserFollowers = () => {
+const UserFollowers = (props) => {
   return (
-    <div></div>
+    <div>
+      
+    </div>
   )
 };
 
