@@ -1,5 +1,6 @@
 import React from 'react';
 import UserFollowers from './UserFollowers';
+import SearchBar from './SearchBar';
 import { UserCardDiv, UserCardImage, UserCardH4, UserCardH6, UserCardText, UserCardLink, UserCardImageDiv, UserCardTextDiv } from './StyledComponents';
 import { gsap } from 'gsap';
 
@@ -14,6 +15,7 @@ const UserCard = (props) => {
 
   return (
     <div>
+      <SearchBar handleChange={props.handleChange} input={props.input} handleSubmit={props.handleSubmit} />
       <UserCardDiv>
         <UserCardImageDiv>
           <UserCardImage onMouseEnter={enlarge} onMouseLeave={normal} className="userImage" src={props.user.avatar_url} alt={props.user.name} />

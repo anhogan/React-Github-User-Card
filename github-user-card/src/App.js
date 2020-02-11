@@ -9,7 +9,8 @@ class App extends Component {
     super();
     this.state = {
       user: [],
-      followers: []
+      followers: [],
+      input: ''
     };
   };
 
@@ -30,11 +31,33 @@ class App extends Component {
       });
   };
 
+  handleChange = (event) => {
+    this.setState({input: event.target.value});
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    axios.get(`https://api.github.com/users/${this.state.input}`)
+      .then(response => {
+        this.setState({user: response.data});
+        return axios.get(`https://api.github.com/users/${this.state.input}/followers`)
+          .then(response => {
+            this.setState({followers: response.data});
+          })
+          .catch(error => {
+            console.log(error.message);
+          });
+      })
+      .catch(error => {
+        console.log(error.message);
+      })
+  };
+
   render() {
     return (
       <div className="App">
         <Header />
-        <UserCard user={this.state.user} followers={this.state.followers} />
+        <UserCard user={this.state.user} followers={this.state.followers} input={this.state.input} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
       </div>
     );
   }
