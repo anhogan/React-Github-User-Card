@@ -1,12 +1,13 @@
 import React from 'react';
 import github from '../github.png';
+import { HeaderDiv, HeaderImage, HeaderText } from './StyledComponents';
 
 const Header = () => {
   return (
-    <div>
-      <img src={github} alt="GitHub logo" />
-      <h1>GitHub User Snapshot</h1>
-    </div>
+    <HeaderDiv>
+      <HeaderImage src={github} alt="GitHub logo" />
+      <HeaderText>GitHub User Snapshot</HeaderText>
+    </HeaderDiv>
   )
 };
 
