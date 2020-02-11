@@ -14,9 +14,7 @@ const UserCard = (props) => {
         <a href={props.user.html_url}>{props.user.html_url}</a>
         <p>Followers: {props.user.followers}</p>
         <p>Repositories: {props.user.public_repos}</p>
-        <button onClick={() => {props.followers.map(user => {
-          <UserFollowers key={user.id} user={user} />
-        })}}>View Followers</button>
+        <button onClick={props.fetchFollowers}>View Followers</button>
       </div>
     </div>
   )
