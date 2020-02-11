@@ -3,15 +3,11 @@ import React from 'react';
 const UserFollowers = (props) => {
   return (
     <div>
-      {/* {props.followers.map(user => {
-        <div>
-          <div>
-            <img src={user.avatar_url} alt={user.login} />
-          </div>
-          <p>{user.login}</p>
-          <a href={user.html_url}>{user.html_url}</a>
-        </div>
-      })} */}
+      <div>
+        <img src={props.user.avatar_url} alt={props.user.login} />
+      </div>
+      <p>{props.user.login}</p>
+      <a href={props.user.html_url}>{props.user.html_url}</a>
     </div>
   )
 };

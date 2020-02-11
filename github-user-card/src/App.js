@@ -8,8 +8,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      user: []
-      // followers: []
+      user: [],
+      followers: []
     };
   };
 
@@ -18,23 +18,19 @@ class App extends Component {
       .then(response => {
         this.setState({user: response.data});
         console.log(this.state.user);
+        return axios.get('https://api.github.com/users/anhogan/followers')
+          .then(response => {
+            this.setState({followers: response.data});
+            console.log(this.state.followers);
+          })
+          .catch(error => {
+            console.log(error.message);
+          });
       })
       .catch(error => {
         console.log(error.message)
       });
   };
-
-  // fetchFollowers = (event) => {
-  //   event.preventDefault();
-  //   fetch('https://api.github.com/users/anhogan/followers')
-  //     .then(response => {
-  //       this.setState({followers: response.data});
-  //       console.log(this.state.followers);
-  //     })
-  //     .catch(error => {
-  //       console.log(error.message);
-  //     });
-  // }
 
   render() {
     return (
