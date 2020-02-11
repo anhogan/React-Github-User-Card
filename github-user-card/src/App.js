@@ -13,22 +13,22 @@ class App extends Component {
     };
   };
 
-  // componentDidMount() {
-  //   axios.get('https://api.github.com/users/anhogan')
-  //     .then(response => {
-  //       this.setState({user: response.data});
-  //       return axios.get('https://api.github.com/users/anhogan/followers')
-  //         .then(response => {
-  //           this.setState({followers: response.data});
-  //         })
-  //         .catch(error => {
-  //           console.log(error.message);
-  //         });
-  //     })
-  //     .catch(error => {
-  //       console.log(error.message)
-  //     });
-  // };
+  componentDidMount() {
+    axios.get('https://api.github.com/users/anhogan')
+      .then(response => {
+        this.setState({user: response.data});
+        return axios.get('https://api.github.com/users/anhogan/followers')
+          .then(response => {
+            this.setState({followers: response.data});
+          })
+          .catch(error => {
+            console.log(error.message);
+          });
+      })
+      .catch(error => {
+        console.log(error.message)
+      });
+  };
 
   render() {
     return (
