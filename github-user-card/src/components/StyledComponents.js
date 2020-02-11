@@ -116,3 +116,38 @@ export const FollowerLink = styled.a`
     cursor: pointer;
   }
 `;
+
+export const SearchDiv = styled.div`
+  width: 25%;
+  margin: 1% auto;
+  padding: 1%;
+`;
+
+export const SearchTitle = styled.h3`
+  color: slateblue;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin: 2%;
+`;
+
+export const SearchInput = styled.input`
+  width: 60%;
+  background: white;
+  border: none;
+  color: turquoise;
+  font-size: 1.2rem;
+  margin-right: 5%;
+`;
+
+export const SearchButton = styled.button`
+  width: 30%;
+  font-size: 1.2rem;
+  background: slateblue;
+  color: turquoise;
+  border: 1px solid white;
+  border-radius: 20px;
+  &:hover{
+    background: white;
+    colot: darkgrey;
+  }
+`;

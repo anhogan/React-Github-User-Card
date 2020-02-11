@@ -1,14 +1,15 @@
 import React from 'react';
+import {SearchDiv, SearchTitle, SearchInput, SearchButton } from './StyledComponents';
 
 const SearchBar = (props) => {
   return (
-    <div>
-      <h3>Find a User</h3>
+    <SearchDiv>
+      <SearchTitle>Find a User</SearchTitle>
       <form onSubmit={props.handleSubmit}>
-        <input type="text" name="search" className="searchBar" onChange={props.handleChange} value={props.input} />
-        <button>Get User!</button>
+        <SearchInput type="text" name="search" className="searchBar" onChange={props.handleChange} value={props.input} />
+        <SearchButton>Get User!</SearchButton>
       </form>
-    </div>
+    </SearchDiv>
   )
 };
 

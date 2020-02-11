@@ -5,8 +5,8 @@ import { gsap } from 'gsap';
 
 const Header = () => {
   const animate = () => {
-    gsap.to('.image', {duration: 3, x: 1200, ease: "back"})
-  }
+    gsap.to('.image', {duration: 3, x: 1200, ease: "back"});
+  };
 
   return (
     <HeaderDiv>
