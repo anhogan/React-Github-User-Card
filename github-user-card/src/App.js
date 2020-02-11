@@ -13,24 +13,24 @@ class App extends Component {
     };
   };
 
-  componentDidMount() {
-    axios.get('https://api.github.com/users/anhogan')
-      .then(response => {
-        this.setState({user: response.data});
-        console.log(this.state.user);
-        return axios.get('https://api.github.com/users/anhogan/followers')
-          .then(response => {
-            this.setState({followers: response.data});
-            console.log(this.state.followers);
-          })
-          .catch(error => {
-            console.log(error.message);
-          });
-      })
-      .catch(error => {
-        console.log(error.message)
-      });
-  };
+  // componentDidMount() {
+  //   axios.get('https://api.github.com/users/anhogan')
+  //     .then(response => {
+  //       this.setState({user: response.data});
+  //       console.log(this.state.user);
+  //       return axios.get('https://api.github.com/users/anhogan/followers')
+  //         .then(response => {
+  //           this.setState({followers: response.data});
+  //           console.log(this.state.followers);
+  //         })
+  //         .catch(error => {
+  //           console.log(error.message);
+  //         });
+  //     })
+  //     .catch(error => {
+  //       console.log(error.message)
+  //     });
+  // };
 
   render() {
     return (
