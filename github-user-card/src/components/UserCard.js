@@ -2,12 +2,6 @@ import React from 'react';
 import UserFollowers from './UserFollowers';
 
 const UserCard = (props) => {
-  // const fetchFollowers = () => {
-  //   props.followers.map(user => (
-  //     <UserFollowers key={user.id} user={user} />
-  //   ))
-  // };
-
   return (
     <div>
       <div>
@@ -20,8 +14,8 @@ const UserCard = (props) => {
         <a href={props.user.html_url}>{props.user.html_url}</a>
         <p>Followers: {props.user.followers}</p>
         <p>Repositories: {props.user.public_repos}</p>
-        {/* <button onClick={fetchFollowers}>View Followers</button> */}
       </div>
+      <UserFollowers followers={props.followers} />
     </div>
   )
 };

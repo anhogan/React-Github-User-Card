@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
 import UserCard from'./components/UserCard';
-import UserFollowers from './components/UserFollowers';
 import axios from 'axios';
 import './App.css';
 
@@ -37,8 +36,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <UserCard user={this.state.user} />
-        <UserFollowers followers={this.state.followers} />
+        <UserCard user={this.state.user} followers={this.state.followers} />
       </div>
     );
   }
