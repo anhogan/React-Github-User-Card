@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
 import UserCard from'./components/UserCard';
-import axios from 'axios';
 import './App.css';
 
 class App extends Component {
@@ -19,21 +18,12 @@ class App extends Component {
         this.setState({user: response.data});
         return fetch('https://api.github.com/users/anhogan/followers');
       })
-      .then(followers => {
-        this.setState({followers: followers.data});
+      .then(response => {
+        this.setState({followers: response});
         console.log(this.state.followers);
       })
       .catch(error => {
         console.log(error.message)
-      });
-
-    axios.get('https://api.github.com/users/anhogan/followers')
-      .then(response => {
-        this.setState({followers: response.data});
-        console.log(this.state.followers);
-      })
-      .catch(error => {
-        console.log(error.message);
       });
   };
 
@@ -41,7 +31,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <UserCard />
+        <UserCard user={this.state.user} followers={this.state.followers} />
       </div>
     );
   }
