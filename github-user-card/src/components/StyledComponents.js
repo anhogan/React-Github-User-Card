@@ -74,3 +74,44 @@ export const UserCardLink = styled.a`
     cursor: pointer;
   }
 `;
+
+export const FollowerSection = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+`;
+
+export const FollowerDiv = styled.div`
+  width: 22%;
+  margin: 1%;
+  padding: 1%;
+  background: white;
+  border: 2px solid slateblue;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const FollowerImageDiv = styled.div`
+  width: 50%;
+  margin: 0 auto;
+`;
+
+export const FollowerImage = styled.img`
+  width: 100%;
+  border-radius: 20px;
+`;
+
+export const FollowerText = styled.p`
+  font-size: 1.2rem;
+  color: slateblue;
+`;
+
+export const FollowerLink = styled.a`
+  font-size: .8rem;
+  color: turquoise;
+  &:hover {
+    color: slateblue;
+    cursor: pointer;
+  }
+`;
