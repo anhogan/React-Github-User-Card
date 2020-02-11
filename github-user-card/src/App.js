@@ -12,20 +12,20 @@ class App extends Component {
     };
   };
 
-  componentDidMount() {
-    fetch('https://api.github.com/users/anhogan')
-      .then(response => {
-        this.setState({user: response.data});
-        return fetch('https://api.github.com/users/anhogan/followers');
-      })
-      .then(response => {
-        this.setState({followers: response});
-        console.log(this.state.followers);
-      })
-      .catch(error => {
-        console.log(error.message)
-      });
-  };
+  // componentDidMount() {
+  //   fetch('https://api.github.com/users/anhogan')
+  //     .then(response => {
+  //       this.setState({user: response.data});
+  //       return fetch('https://api.github.com/users/anhogan/followers');
+  //     })
+  //     .then(response => {
+  //       this.setState({followers: response});
+  //       console.log(this.state.followers);
+  //     })
+  //     .catch(error => {
+  //       console.log(error.message)
+  //     });
+  // };
 
   render() {
     return (
