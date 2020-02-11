@@ -82,7 +82,7 @@ export const FollowerSection = styled.div`
 `;
 
 export const FollowerDiv = styled.div`
-  width: 22%;
+  width: 20%;
   margin: 1%;
   padding: 1%;
   background: white;
@@ -105,6 +105,7 @@ export const FollowerImage = styled.img`
 export const FollowerText = styled.p`
   font-size: 1.2rem;
   color: slateblue;
+  margin: 1% 0 0 0;
 `;
 
 export const FollowerLink = styled.a`
